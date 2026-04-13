@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ivan Baklazhov — Full Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">IB.DEV</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:8px;">
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">☀</button>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-label">Full Stack Developer</div>
+  <h1 class="hero-title">
+    Ivan<br><span class="accent">Baklazhov</span>
+  </h1>
+  <div class="hero-subtitle">Web &amp; Mobile Engineer</div>
+  <p class="hero-desc">
+    Focused on <strong>results</strong> and an <strong>individual approach</strong> to every project.
+    Nearly 2 years building web and mobile products — from fintech banking apps
+    to e-commerce platforms and medical tooling.
+  </p>
+  <div class="hero-cta">
+    <a href="#contact" class="btn btn-primary">Get in touch</a>
+    <a href="https://github.com/Axes11" target="_blank" class="btn btn-secondary">GitHub ↗</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">
+        <span class="counter" data-target="2">0</span><span class="suffix">+</span>
+      </div>
+      <div class="stat-label">Years in IT</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">
+        <span class="counter" data-target="1">0</span><span class="suffix">yr</span>
+      </div>
+      <div class="stat-label">Commercial dev</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">
+        <span class="counter" data-target="3">0</span>
+      </div>
+      <div class="stat-label">Industries served</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">
+        <span class="counter" data-target="100">0</span><span class="suffix">%</span>
+      </div>
+      <div class="stat-label">Result oriented</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header fade-in">
+    <span class="section-num">01</span>
+    <h2 class="section-title">About</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text fade-in">
+      <p>I'm a focused developer with nearly <strong>2 years</strong> of hands-on experience in building web and mobile applications. My career path has evolved from independent freelancing to working within professional development teams on high-stakes products.</p>
+      <p>I'm drawn to <strong>modern technology</strong> and keep up with the ecosystem — new frameworks, tools, and patterns. I'm comfortable jumping into unfamiliar stacks and taking full ownership of specific features or entire modules.</p>
+      <p>Every project gets <strong>individual treatment</strong>. No copy-paste solutions. I dig into the context, understand the business logic, then build something that actually holds up.</p>
+      <div class="tech-tags">
+        <span class="tech-tag">React Native</span>
+        <span class="tech-tag">React.js</span>
+        <span class="tech-tag">Next.js</span>
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">JavaScript ES6+</span>
+        <span class="tech-tag">Redux</span>
+        <span class="tech-tag">Zustand</span>
+        <span class="tech-tag">Git</span>
+        <span class="tech-tag">Node.js</span>
+        <span class="tech-tag">REST API</span>
+      </div>
+    </div>
+    <div class="fade-in">
+      <div class="track-card">
+        <div class="track-label">Corporate Track · 10 months</div>
+        <div class="track-title">Fintech · Insurtech · MedTech</div>
+        <div class="track-desc">Contributed to large-scale products across three industries. Migrated a banking app from React Native 0.76 to 0.83, built customer portals for insurance providers, and developed internal video-sharing tooling for medical clinics.</div>
+      </div>
+      <div class="track-card">
+        <div class="track-label">Freelance Track · 1 year+</div>
+        <div class="track-title">E-Commerce · Automation · Delivery</div>
+        <div class="track-desc">Built and deployed e-commerce solutions from scratch. Managed the full development lifecycle, integrated Telegram bot automation, and delivered functional products directly to clients end-to-end.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS GRID -->
+<section id="skills">
+  <div class="skills-header fade-in">
+    <div class="section-header" style="margin-bottom:0">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Stack</h2>
+      <div class="section-line"></div>
+    </div>
+  </div>
+  <div class="skills-grid-container" id="skillsGrid"></div>
+</section>
+
+<!-- NDA EXPERIENCE -->
+<section id="experience">
+  <div class="section-header fade-in">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-line"></div>
+  </div>
+  <p class="fade-in" style="color:var(--text2);font-size:14px;font-weight:300;margin-bottom:8px;">Projects below are under NDA. Details are intentionally limited.</p>
+  <div class="nda-cards">
+    <div class="nda-card fade-in">
+      <div class="nda-industry">Fintech</div>
+      <div class="nda-title">Banking App Migration</div>
+      <div class="nda-desc">
+        Large-scale React Native upgrade across major versions. Maintained feature parity on both iOS &amp; Android throughout the migration. Client: <span class="nda-blur">●●●●● Bank</span>.
+      </div>
+    </div>
+    <div class="nda-card fade-in">
+      <div class="nda-industry">Insurtech</div>
+      <div class="nda-title">Customer Portal</div>
+      <div class="nda-desc">
+        Full customer-facing portal for an insurance provider. Policy management, claims flow, document upload. Built in React.js with TypeScript. Client: <span class="nda-blur">●●●●●●● Insurance</span>.
+      </div>
+    </div>
+    <div class="nda-card fade-in">
+      <div class="nda-industry">MedTech</div>
+      <div class="nda-title">Internal Video Platform</div>
+      <div class="nda-desc">
+        Internal tooling for a medical clinic network. Built for staff use with role-based access control and content management. Deployed for <span class="nda-blur">●●●● Clinic Network</span>.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header fade-in">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Projects</h2>
+    <div class="section-line"></div>
+  </div>
+  <p class="fade-in" style="color:var(--text2);font-size:14px;font-weight:300;margin-bottom:32px;">Public freelance work — built and deployed independently.</p>
+  <div class="projects-grid">
+    <a href="https://car-partner-landing-pdyf.vercel.app/" target="_blank" class="project-card fade-in">
+      <div class="project-thumb" id="thumb-cp">
+        <div class="project-thumb-fallback"><span>CP</span></div>
+      </div>
+      <div class="project-tag">Landing · Pet Project</div>
+      <div class="project-name">CarPartner</div>
+      <div class="project-desc">Landing page for a US car import company — official Copart representative. Multilingual, conversion-focused, responsive.</div>
+      <div class="project-footer">
+        <div class="project-stack">
+          <span class="p-tag">React</span><span class="p-tag">Next.js</span><span class="p-tag">CSS</span>
+        </div>
+        <span class="project-arrow">↗</span>
+      </div>
+    </a>
+    <a href="https://finance-tracker-qepx.vercel.app/" target="_blank" class="project-card fade-in">
+      <div class="project-thumb" id="thumb-ft">
+        <div class="project-thumb-fallback"><span>FT</span></div>
+      </div>
+      <div class="project-tag">Dashboard · In Development</div>
+      <div class="project-name">Finance Tracker</div>
+      <div class="project-desc">Personal finance tracker with multi-account support (OKX, Binance, Kraken), charts, transaction history, and portfolio breakdown.</div>
+      <div class="project-footer">
+        <div class="project-stack">
+          <span class="p-tag">React</span><span class="p-tag">TypeScript</span><span class="p-tag">Charts</span>
+        </div>
+        <span class="project-arrow">↗</span>
+      </div>
+    </a>
+    <a href="https://tea-forntend-vercel.vercel.app/" target="_blank" class="project-card fade-in">
+      <div class="project-thumb" id="thumb-tea">
+        <div class="project-thumb-fallback"><span>T4</span></div>
+      </div>
+      <div class="project-tag">E-Commerce · Telegram Bot</div>
+      <div class="project-name">Tea4You.Shop</div>
+      <div class="project-desc">Full e-commerce platform for a tea shop with product catalog, cart, categories, and Telegram bot for order notifications. Includes a custom admin panel for product and inventory management.</div>
+      <div class="project-footer">
+        <div class="project-stack">
+          <span class="p-tag">React</span><span class="p-tag">Node.js</span><span class="p-tag">Telegram API</span>
+        </div>
+        <span class="project-arrow">↗</span>
+      </div>
+    </a>
+
+    <a href="https://axes11.github.io/furniture-shop/" target="_blank" class="project-card fade-in">
+      <div class="project-thumb" id="thumb-fur">
+        <div class="project-thumb-fallback"><span>FU</span></div>
+      </div>
+      <div class="project-tag">E-Commerce · Pet Project</div>
+      <div class="project-name">Furnitur</div>
+      <div class="project-desc">Online furniture store with product gallery, category browsing, cart, and wishlist. Clean minimal UI focused on product presentation.</div>
+      <div class="project-footer">
+        <div class="project-stack">
+          <span class="p-tag">React</span><span class="p-tag">Next.js</span><span class="p-tag">CSS</span>
+        </div>
+        <span class="project-arrow">↗</span>
+      </div>
+    </a>
+    <a href="https://axes11.github.io/minimalstic-landing/" target="_blank" class="project-card fade-in">
+      <div class="project-thumb" id="thumb-surf">
+        <div class="project-thumb-fallback"><span>MS</span></div>
+      </div>
+      <div class="project-tag">Landing · Pet Project</div>
+      <div class="project-name">Minimal Solution</div>
+      <div class="project-desc">Multipurpose minimal landing page with full-bleed imagery, editorial typography, and clean section layout.</div>
+      <div class="project-footer">
+        <div class="project-stack">
+          <span class="p-tag">HTML</span><span class="p-tag">CSS</span><span class="p-tag">JS</span>
+        </div>
+        <span class="project-arrow">↗</span>
+      </div>
+    </a>
+    <div class="project-card coming-soon fade-in">
+      <div class="cs-empty">
+        <div class="cs-overlay-full">
+          <span class="cs-label">Coming Soon</span>
+          <div class="cs-bar"></div>
+          <div class="cs-dots"><div class="cs-dot"></div><div class="cs-dot"></div><div class="cs-dot"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-grid">
+      <div class="fade-in">
+        <div class="contact-title">Let's<br><span class="accent">Build</span><br>Something.</div>
+        <p class="contact-sub">Open for freelance projects, full-time positions, and consulting. Individual approach to every brief.</p>
+      </div>
+      <div class="contact-links fade-in">
+        <a href="https://t.me/Axes915" target="_blank" class="contact-link">
+          <div class="cl-icon">✈</div>
+          <div class="cl-info">
+            <div class="cl-label">Telegram</div>
+            <div class="cl-value">@Axes915</div>
+          </div>
+          <span class="cl-arrow">↗</span>
+        </a>
+        <a href="/cdn-cgi/l/email-protection#026b6063696e63786a6d7442656f636b6e2c616d6f" class="contact-link">
+          <div class="cl-icon">@</div>
+          <div class="cl-info">
+            <div class="cl-label">Email</div>
+            <div class="cl-value"><span class="__cf_email__" data-cfemail="5e373c3f35323f243631281e39333f3732703d3133">[email&#160;protected]</span></div>
+          </div>
+          <span class="cl-arrow">↗</span>
+        </a>
+        <a href="https://github.com/Axes11" target="_blank" class="contact-link">
+          <div class="cl-icon">⌥</div>
+          <div class="cl-info">
+            <div class="cl-label">GitHub</div>
+            <div class="cl-value">Axes11</div>
+          </div>
+          <span class="cl-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="logo">Ivan Baklazhov · Full Stack Dev</span>
+  <span class="copy">© 2025 — All rights reserved</span>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
