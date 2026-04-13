@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ivan Baklazhov — Full Stack Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -22,7 +23,9 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:8px;">
-    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">☀</button>
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="themeIcon"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
     <button class="nav-burger" id="navBurger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -115,7 +118,7 @@
     </div>
     <div class="fade-in">
       <div class="track-card">
-        <div class="track-label">Corporate Track · 10 months</div>
+        <div class="track-label">Corporate Track · 1 year</div>
         <div class="track-title">Fintech · Insurtech · MedTech</div>
         <div class="track-desc">Contributed to large-scale products across three industries. Migrated a banking app from React Native 0.76 to 0.83, built customer portals for insurance providers, and developed internal video-sharing tooling for medical clinics.</div>
       </div>
@@ -191,7 +194,7 @@
       <div class="project-desc">Landing page for a US car import company — official Copart representative. Multilingual, conversion-focused, responsive.</div>
       <div class="project-footer">
         <div class="project-stack">
-          <span class="p-tag">React</span><span class="p-tag">Next.js</span><span class="p-tag">CSS</span>
+          <span class="p-tag">React</span><span class="p-tag">Next.js</span><span class="p-tag">CSS</span><span class="p-tag">Supabase</span><span class="p-tag">GSAP</span>
         </div>
         <span class="project-arrow">↗</span>
       </div>
@@ -205,7 +208,7 @@
       <div class="project-desc">Personal finance tracker with multi-account support (OKX, Binance, Kraken), charts, transaction history, and portfolio breakdown.</div>
       <div class="project-footer">
         <div class="project-stack">
-          <span class="p-tag">React</span><span class="p-tag">TypeScript</span><span class="p-tag">Charts</span>
+          <span class="p-tag">NEXT</span><span class="p-tag">TypeScript</span><span class="p-tag">Charts</span><span class="p-tag">Supabase</span><span class="p-tag">ShadCN</span>
         </div>
         <span class="project-arrow">↗</span>
       </div>
@@ -219,7 +222,7 @@
       <div class="project-desc">Full e-commerce platform for a tea shop with product catalog, cart, categories, and Telegram bot for order notifications. Includes a custom admin panel for product and inventory management.</div>
       <div class="project-footer">
         <div class="project-stack">
-          <span class="p-tag">React</span><span class="p-tag">Node.js</span><span class="p-tag">Telegram API</span>
+          <span class="p-tag">React</span><span class="p-tag">Node.js</span><span class="p-tag">Telegram API</span><span class="p-tag">Supabase</span>
         </div>
         <span class="project-arrow">↗</span>
       </div>
@@ -234,7 +237,7 @@
       <div class="project-desc">Online furniture store with product gallery, category browsing, cart, and wishlist. Clean minimal UI focused on product presentation.</div>
       <div class="project-footer">
         <div class="project-stack">
-          <span class="p-tag">React</span><span class="p-tag">Next.js</span><span class="p-tag">CSS</span>
+          <span class="p-tag">HTML</span><span class="p-tag">CSS</span><span class="p-tag">JS</span>
         </div>
         <span class="project-arrow">↗</span>
       </div>
@@ -275,23 +278,28 @@
       </div>
       <div class="contact-links fade-in">
         <a href="https://t.me/Axes915" target="_blank" class="contact-link">
-          <div class="cl-icon">✈</div>
+          <div class="cl-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg></div>
           <div class="cl-info">
             <div class="cl-label">Telegram</div>
             <div class="cl-value">@Axes915</div>
           </div>
           <span class="cl-arrow">↗</span>
         </a>
-        <a href="/cdn-cgi/l/email-protection#026b6063696e63786a6d7442656f636b6e2c616d6f" class="contact-link">
-          <div class="cl-icon">@</div>
+        <a href="mailto:ibaklazhov@gmail.com" class="contact-link">
+          <div class="cl-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
           <div class="cl-info">
             <div class="cl-label">Email</div>
-            <div class="cl-value"><span class="__cf_email__" data-cfemail="5e373c3f35323f243631281e39333f3732703d3133">[email&#160;protected]</span></div>
+            <div class="cl-value"><span>ibaklazhov@gmail.com</span></div>
           </div>
           <span class="cl-arrow">↗</span>
         </a>
         <a href="https://github.com/Axes11" target="_blank" class="contact-link">
-          <div class="cl-icon">⌥</div>
+          <div class="cl-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></div>
           <div class="cl-info">
             <div class="cl-label">GitHub</div>
             <div class="cl-value">Axes11</div>
@@ -305,7 +313,7 @@
 
 <footer>
   <span class="logo">Ivan Baklazhov · Full Stack Dev</span>
-  <span class="copy">© 2025 — All rights reserved</span>
+  <span class="copy">© 2026 — All rights reserved</span>
 </footer>
 
 <script src="main.js"></script>

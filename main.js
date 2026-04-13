@@ -2,9 +2,15 @@
 function toggleTheme() {
   const isDark = !document.documentElement.getAttribute('data-theme');
   document.documentElement.setAttribute('data-theme', isDark ? 'light' : '');
-  document.querySelector('.theme-toggle').textContent = isDark ? '◐' : '☀';
+  const icon = document.getElementById('themeIcon');
+  if (icon) {
+    // Sun icon (current, for dark mode) vs Moon icon (for light mode)
+    icon.innerHTML = isDark
+      ? '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>'
+      : '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
+  }
 }
-
+ 
 // COUNTERS
 function animateCounters() {
   document.querySelectorAll('.counter').forEach(el => {
@@ -24,13 +30,13 @@ const statsObs = new IntersectionObserver(entries => {
   if (entries[0].isIntersecting) { animateCounters(); statsObs.disconnect(); }
 }, { threshold: 0.5 });
 statsObs.observe(document.querySelector('.stats-bar'));
-
+ 
 // SCROLL FADE
 const fadeObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.12 });
 document.querySelectorAll('.fade-in').forEach(el => fadeObs.observe(el));
-
+ 
 // SKILLS GRID ANIMATION
 const skills = [
   { word: 'REACT',      full: 'React.js' },
@@ -46,20 +52,22 @@ const skills = [
   { word: 'HTML5',      full: 'HTML5' },
   { word: 'CSS3',       full: 'CSS3' },
 ];
-
+ 
 const SCRAMBLE_SPEED = 240;   // ms per frame
 const REVEAL_LETTER_DELAY = 160; // ms per letter
 const HOLD_TIME = 4500;        // how long word is shown
 const COLLAPSE_SCRAMBLE = 220;
 const CYCLE_BASE = 7000;       // ms between cycles per row
-
+ 
 function buildSkillGrid() {
   const container = document.getElementById('skillsGrid');
-  const cellW = 48;
-  const cols = Math.floor(window.innerWidth / cellW);
+  const containerW = container.offsetWidth || window.innerWidth;
+  const minCellW = 44;
+  const cols = Math.max(8, Math.floor(containerW / minCellW));
+  const cellW = Math.floor(containerW / cols);
   container.innerHTML = '';
   const allRows = [];
-
+ 
   for (let r = 0; r < skills.length; r++) {
     const row = document.createElement('div');
     row.className = 'skill-row';
@@ -68,6 +76,8 @@ function buildSkillGrid() {
     for (let c = 0; c < cols; c++) {
       const cell = document.createElement('div');
       cell.className = 'skill-cell';
+      cell.style.flex = '1 1 ' + cellW + 'px';
+      cell.style.minWidth = '0';
       cell.textContent = chars[Math.floor(Math.random() * chars.length)];
       row.appendChild(cell);
       cells.push(cell);
@@ -75,20 +85,20 @@ function buildSkillGrid() {
     container.appendChild(row);
     allRows.push({ cells, word: skills[r].word, full: skills[r].full });
   }
-
+ 
   allRows.forEach(({ cells, word }, ri) => {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     const wordStart = Math.floor((cells.length - word.length) / 2);
     let revealed = false;
-
+ 
     function randomChar() { return chars[Math.floor(Math.random() * chars.length)]; }
-
+ 
     function scramble(interval) {
       return setInterval(() => {
         if (!revealed) cells.forEach(cell => { cell.textContent = randomChar(); cell.classList.remove('lit','bright'); });
       }, interval);
     }
-
+ 
     function revealWord(cb) {
       revealed = true;
       cells.forEach((cell, ci) => {
@@ -101,13 +111,13 @@ function buildSkillGrid() {
       });
       if (cb) setTimeout(cb, word.length * REVEAL_LETTER_DELAY + HOLD_TIME);
     }
-
+ 
     function collapseWord(cb) {
       revealed = false;
       cells.forEach(cell => { cell.classList.remove('lit','bright'); cell.textContent = randomChar(); });
       if (cb) setTimeout(cb, 300);
     }
-
+ 
     function runCycle() {
       const si = scramble(SCRAMBLE_SPEED);
       setTimeout(() => {
@@ -123,13 +133,13 @@ function buildSkillGrid() {
         });
       }, 900 + ri * 120);
     }
-
+ 
     // Stagger start per row
     setTimeout(runCycle, ri * 350);
   });
 }
-
-
+ 
+ 
 // Inject project screenshots
 (function() {
   var imgs = {
@@ -151,20 +161,25 @@ function buildSkillGrid() {
     thumb.closest('.project-card').addEventListener('mouseleave', function() { img.style.transform=''; });
   });
 })();
-
-buildSkillGrid();
+ 
+// Defer until after layout so container.offsetWidth is correct
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => requestAnimationFrame(buildSkillGrid));
+} else {
+  requestAnimationFrame(buildSkillGrid);
+}
 window.addEventListener('resize', () => {
   clearTimeout(window._rzt);
   window._rzt = setTimeout(buildSkillGrid, 200);
 });
-
+ 
 // CURSOR GLOW
 const glow = document.getElementById('cursorGlow');
 document.addEventListener('mousemove', e => {
   glow.style.left = e.clientX + 'px';
   glow.style.top = e.clientY + 'px';
 });
-
+ 
 // BURGER MENU
 const burger = document.getElementById('navBurger');
 const drawer = document.getElementById('navDrawer');
